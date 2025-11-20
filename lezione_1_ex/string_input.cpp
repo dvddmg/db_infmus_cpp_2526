@@ -12,9 +12,18 @@ int main() {
 
         // richiesta all'utente, salvataggio nella variabile 'string input'
         cout << "Scrivi il tuo nome: ";
-        cin >> input;
+        
+        // cin >> input;
+        // verifichiamo che la stringa non sia vuota:
+        /*
+            "Devi scrivere il tuo nome..." non veniva mai stampato.
+            Se inserisci una string vuota (carriage return o 
+            spazio), cin continua ad aspettare un input. 
+            Per verificare una stringa vuota bisogna chidere al 
+            programma di "leggere tutta la riga" con std::getline:
 
-        // verifichiamo che la stringa non sia vuota
+            */
+        std::getline(std::cin, input);
         if(input.empty()) {
             cout << "Devi scrivere il tuo nome...\n";
             continue;
@@ -25,16 +34,13 @@ int main() {
         for (char c : input){
             if(isdigit(c)){
                 soloNumeri = true;
-                continue;
+                break; // per uscire solo dal for loop
             }
-            continue;
         }
-        
         if(soloNumeri){
             cout << "Scrivi solo testo...\n";
             continue;
         }
-
         // superati i controlli si interrompe il while, altrimenti continua il loop infinito
         break;
     }

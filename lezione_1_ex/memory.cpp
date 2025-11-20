@@ -1,3 +1,5 @@
+#include <cfloat>
+#include <climits>
 #include <cstdio>
 #include <iostream>
 #include <limits>
@@ -17,6 +19,13 @@ int main() {
     cout << "INT max = " << numeric_limits<int>::min() << endl;
     cout << "FLOAT max = " << numeric_limits<float>::max() << endl;
     cout << "FLOAT max = " << numeric_limits<float>::min() << endl;
+
+    // possibili alternative sono le variabili
+    INT_MAX; // numeric_limits<int>::max()
+    INT_MIN; // numeric_limits<int>::min()
+    FLT_MAX; // numeric_limits<float>::max()
+    DBL_MAX; // numeric_limits<double>::max()
+    // dichiarate in <climits> e <cfloat>
 
     int provaInput;
     cout << "inserisci un numero: ";
