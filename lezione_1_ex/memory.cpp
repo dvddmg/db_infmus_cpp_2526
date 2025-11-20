@@ -27,6 +27,9 @@ int main() {
     DBL_MAX; // numeric_limits<double>::max()
     // dichiarate in <climits> e <cfloat>
 
+    cout << "DOUBLE max = " << DBL_MAX << endl;
+    cout << "DOUBLE min = " << DBL_MIN << endl;
+
     int provaInput;
     cout << "inserisci un numero: ";
     cin >> provaInput;
